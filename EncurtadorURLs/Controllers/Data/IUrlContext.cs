@@ -1,6 +1,8 @@
 ﻿using EncurtadorURLs.Models;
 
+
 namespace EncurtadorURLs.Data;
+
 
 /// <summary>
 /// Contrato da camada de persistência. A implementação real (em memória, banco, etc.)
@@ -11,4 +13,8 @@ public interface IUrlContext
 {
     Task<bool> ShortCodeExistsAsync(string shortCode);
     Task AddAsync(UrlItem item);
+    Task<UrlItem?> GetByIdAsync(Guid id);
+    Task<UrlItem?> GetUrlByIdAsync(Guid id);
+
+
 }
